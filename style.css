@@ -1,0 +1,271 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+}
+
+
+/* Navbar */
+nav {
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+    align-items: center;
+}
+
+/* Seção de Portfólio */
+.portfolio-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+}
+
+/* Botões de Filtro */
+.square-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #002244;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.square:hover {
+    background-color: #003366;
+}
+
+/* Contêiner de Vídeos */
+.video-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    max-width: 800px;
+    width: 100%;
+}
+
+.video-container iframe {
+    width: 300px;
+    height: 180px;
+    margin-right: 20px;
+    border: none;
+}
+
+.description {
+    flex: 1;
+}
+
+/* Botão Flutuante de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000; /* Alta prioridade para aparecer sobre outros elementos */
+    display: flex; /* Garante visibilidade em todas as telas */
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Imagem circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.whatsapp-button:hover img {
+    transform: scale(1.1);
+}
+
+/* Exibe o botão sempre em telas pequenas */
+@media (max-width: 767px) {
+    .whatsapp-button {
+        display: flex;
+        width: 50px; /* Redimensiona para telas pequenas */
+        height: 50px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.footer-container p {
+    margin: 5px 0;
+}
+
+.footer-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+
+/* Telas pequenas (celulares) */
+@media (max-width: 767px) {
+    .portfolio-section {
+        padding: 10px;
+    }
+
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .square {
+        width: 80px;
+        height: 80px;
+        font-size: 12px;
+    }
+
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Telas médias (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .portfolio-section {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .square {
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+    }
+
+    .video-container iframe {
+        width: 50%;
+        height: auto;
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1024px) {
+    .portfolio-section {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .square {
+        width: 150px;
+        height: 150px;
+        font-size: 16px;
+    }
+}
+
+/* Ajustes de layout para telas pequenas */
+@media (max-width: 767px) {
+    /* Limitar a largura do conteúdo */
+    body, .portfolio-section, .video-list, .square-section {
+        width: 100%; /* Garante que o conteúdo ocupe a largura total da tela */
+        max-width: 100%; /* Limita a largura máxima para evitar scroll horizontal */
+        padding: 10px; /* Adiciona um pouco de espaçamento nas laterais */
+        box-sizing: border-box; /* Inclui o padding na largura total */
+        overflow-x: hidden; /* Remove qualquer rolagem horizontal */
+    }
+
+    /* Ajuste das imagens e iframes */
+    iframe, .video-container iframe {
+        width: 100%; /* Deixa o iframe responsivo */
+        height: auto; /* Ajusta a altura proporcionalmente */
+    }
+
+    /* Ajustes para o botão flutuante do WhatsApp */
+    .whatsapp-button {
+        width: 50px; /* Tamanho menor para telas pequenas */
+        height: 50px;
+    }
+}
+
+
+
