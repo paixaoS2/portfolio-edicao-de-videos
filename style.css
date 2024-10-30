@@ -5,22 +5,36 @@
     box-sizing: border-box;
 }
 
+/* Configuração do body para a imagem de fundo e cor azul */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita a rolagem horizontal */
+    overflow-x: hidden;
+    
+    /* Configurações de fundo */
+    background-image: url('backimg.jpg');
+    background-size: contain; /* Muda de 'cover' para 'contain' para evitar zoom */
+    background-position: page;
+    background-repeat: no-repeat;
+    color: #000000;
+    
+    /* Cor de fundo em azul escuro que aparecerá após a imagem */
+    background-color: #0a3d62; /* Azul escuro (teal) */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
 }
 
-
-/* Navbar */
+/*Nav bar */
 nav {
-    width: 100%;
-    background-color: #333;
-    padding: 10px;
-    display: flex;
-    align-items: center;
+    background-color: rgba(10, 61, 98, 0.8); /* Azul escuro com 80% de opacidade */
+    padding: 10px; /* Adiciona algum preenchimento para deixar a navbar mais espaçosa */
+    width: 100%; /* Garante que a navbar ocupe toda a largura da página */
+    display: flex; /* Usar flexbox para alinhar itens */
+    align-items: center; /* Centraliza verticalmente os itens da navbar */
+    position: relative; /* Para que a navbar fique sobre a imagem */
+    z-index: 1; /* Eleva a navbar acima da imagem de fundo */
 }
+
 
 .logo {
     color: #fff;
@@ -42,54 +56,99 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
+    color: #ffffff;
 }
+
 
 .apresentacao {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #0a3d62; /* Azul escuro sólido (sem transparência) */
+    padding: 20px; /* Mantém o padding existente */
+    border-radius: 8px; /* Mantém os cantos arredondados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Mantém a sombra existente */
 }
 
 .description {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    color: #333;
+    background-color: #0a3d62; /* Azul escuro sólido (sem transparência) */
+    padding: 20px; /* Mantém o padding existente */
+    border-radius: 8px; /* Mantém os cantos arredondados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Mantém a sombra existente */
+    text-align: justify;
+    font-size: 16px; /* Mantém o tamanho da fonte */
+    color: #fff; /* Muda a cor do texto para branco para maior contraste */
 }
+
 
 /* Botões de Filtro */
 .square-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px; /* Espaçamento entre os botões */
     padding: 20px;
+    margin-top: 40px; /* Distância do topo */
 }
 
 .square {
     width: 100px;
     height: 100px;
-    background-color: #002244;
-    color: #ffffff;
+    background-color: #002244; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 10px;
-    transition: background-color 0.3s;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Muda o cursor para mãozinha ao passar o mouse */
+    text-align: center; /* Centraliza o texto */
+    border-radius: 10px; /* Arredonda os cantos */
+    transition: background-color 0.3s, transform 0.3s; /* Efeitos de transição */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Contorno mais forte */
 }
 
+/* Efeito no hover */
 .square:hover {
     background-color: #003366;
+    transform: scale(1.05); /* Aumenta o botão ao passar o mouse */
+}
+
+
+
+.square-gameplays {
+    background-image: url('buttonGame.png');
+    background-size: contain;
+    background-position: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona o stroke */
+}
+
+.square-aulas {
+    background-image: url('buttonAula.jpg');
+    background-size: contain;
+    background-position: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona o stroke */
+}
+
+.square-vlogs {
+    background-image: url('buttonVlogs.jpg');
+    background-size: contain;
+    background-position: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona o stroke */
+}
+
+.square-curtos {
+    background-image: url('buttonShorts.jpg');
+    background-size: contain;
+    background-position: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona o stroke */
+}
+
+.square-todos {
+    background-image: url('buttonAll.jpg');
+    background-size: contain;
+    background-position: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Adiciona o stroke */
 }
 
 /* Contêiner de Vídeos */
