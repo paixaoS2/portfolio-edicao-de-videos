@@ -2,7 +2,7 @@ const videos = [
     {
         url: "https://www.youtube.com/embed/7FEwIZ7r2v8?si=NDg1PJ1kdvYdbRRH",
         description: "Pontos positivos e negativos dos escudos de God of War Ragnarok que eu editei para o Speed Martyr",
-        tags: ["Vlogs"]
+        tags: ["Gameplays"]
     },
     {
         url: "https://www.youtube.com/embed/tBcJ8ho4LA4?si=jUDajQAMohV6G-PO",
